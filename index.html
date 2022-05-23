@@ -27,29 +27,29 @@
 
         <div class="mycalc">
             <form name="calculator" id="calculator">
-                <input type="text" name="inputwindow" id="inputwindow">
+                <input type="text" name="inputvalue" id="inputvalue">
                 <div>
-                    <input type="button" id="one" value="1" onclick="takeValue(document.getElementById('one').value)">
-                    <input type="button" id="two" value="2" onclick="takeValue(document.getElementById('two').value)">
-                    <input type="button" id="three" value="3" onclick="takeValue(document.getElementById('three').value)">
-                    <input type="button" id="plus" value="+" onclick="takeValue(document.getElementById('plus').value)">
+                    <input type="button" id="one" value="1" onclick="calculateMyValue(document.getElementById('one').value)">
+                    <input type="button" id="two" value="2" onclick="calculateMyValue(document.getElementById('two').value)">
+                    <input type="button" id="three" value="3" onclick="calculateMyValue(document.getElementById('three').value)">
+                    <input type="button" id="plus" value="+" onclick="calculateMyValue(document.getElementById('plus').value)">
                 </div>
                 <div>
-                    <input type="button" id="four" value="4" onclick="takeValue(document.getElementById('four').value)">
-                    <input type="button" id="five" value="5" onclick="takeValue(document.getElementById('five').value)">
-                    <input type="button" id="six" value="6" onclick="takeValue(document.getElementById('six').value)">
-                    <input type="button" id="minus" value="-" onclick="takeValue(document.getElementById('minus').value)">
+                    <input type="button" id="four" value="4" onclick="calculateMyValue(document.getElementById('four').value)">
+                    <input type="button" id="five" value="5" onclick="calculateMyValue(document.getElementById('five').value)">
+                    <input type="button" id="six" value="6" onclick="calculateMyValue(document.getElementById('six').value)">
+                    <input type="button" id="minus" value="-" onclick="calculateMyValue(document.getElementById('minus').value)">
                 </div>
                 <div>
-                    <input type="button" id="seven" value="7" onclick="takeValue(document.getElementById('seven').value)">
-                    <input type="button" id="eight" value="8" onclick="takeValue(document.getElementById('eight').value)">
-                    <input type="button" id="nine" value="9" onclick="takeValue(document.getElementById('nine').value)">
-                    <input type="button" id="by" value="*" onclick="takeValue(document.getElementById('by').value)">
-                </div>
+                    <input type="button" id="seven" value="7" onclick="calculateMyValue(document.getElementById('seven').value)">
+                    <input type="button" id="eight" value="8" onclick="calculateMyValue(document.getElementById('eight').value)">
+                    <input type="button" id="nine" value="9" onclick="calculateMyValue(document.getElementById('nine').value)">
+                    <input type="button" id="by" value="*" onclick="calculateMyValue(document.getElementById('by').value)">
+                </div>  
                 <div>
-                    <input type="button" id="zero" value="0" onclick="takeValue(document.getElementById('zero').value)">
-                    <input type="button" id="decimal" value="." onclick="takeValue(document.getElementById('decimal').value)">
-                    <input type="button" id="devide" value="/" onclick="takeValue(document.getElementById('devide').value)">
+                    <input type="button" id="zero" value="0" onclick="calculateMyValue(document.getElementById('zero').value)">
+                    <input type="button" id="decimal" value="." onclick="calculateMyValue(document.getElementById('decimal').value)">
+                    <input type="button" id="devide" value="/" onclick="calculateMyValue(document.getElementById('devide').value)">
                     <input type="button" id="equal" value="=" onclick="calculateResult()">
                 </div>
                 <div class="results">
@@ -63,17 +63,17 @@
 
            
 
-                function takeValue(x) {
-                    document.getElementById('inputwindow').value += x;
+                function calculateMyValue(x) {
+                    document.getElementById('inputvalue').value += x;
                     }
 
                     function clearInput(y) {
-                        document.getElementById('inputwindow').value = y;
+                        document.getElementById('inputvalue').value = y;
                     }
 
                     function calculateResult() {
-                        var result = eval(document.getElementById('inputwindow').value);
-                        document.getElementById('inputwindow').value = result;
+                        var result = eval(document.getElementById('inputvalue').value);
+                        document.getElementById('inputvalue').value = result;
             }
 
 
@@ -82,45 +82,45 @@
 // --------------------------------------------------------------------------------------------------------
 
 
-                // program for a simple calculator
-            // let result;
+                //program for a simple calculator
+            let result;
 
-            // // take the operator input
-            // const operator = prompt('Enter operator ( either +, -, * or / ): ');
+            // take the operator input
+            const operator = prompt('Enter operator ( either +, -, * or / ): ');
 
-            // // take the operand input
-            // const number1 = parseFloat(prompt('Enter first number: '));
-            // const number2 = parseFloat(prompt('Enter second number: '));
+            // take the operand input
+            const number1 = parseFloat(prompt('Enter first number: '));
+            const number2 = parseFloat(prompt('Enter second number: '));
 
-            // switch(operator) {
-            //     case '+':
-            //         result = number1 + number2;
-            //         console.log(`${number1} + ${number2} = ${result}`);
-            //         document.write(`This is Addition Result :  ${number1} + ${number2} = ${result}`);
-            //         break;
+            switch(operator) {
+                case '+':
+                    result = number1 + number2;
+                    console.log(`${number1} + ${number2} = ${result}`);
+                    document.write(`This is Addition Result :  ${number1} + ${number2} = ${result}`);
+                    break;
 
-            //     case '-':
-            //         result = number1 - number2;
-            //         console.log(`${number1} - ${number2} = ${result}`);
-            //         document.write(`This is Subtraction Result :  ${number1} - ${number2} = ${result}`);
-            //         break;
+                case '-':
+                    result = number1 - number2;
+                    console.log(`${number1} - ${number2} = ${result}`);
+                    document.write(`This is Subtraction Result :  ${number1} - ${number2} = ${result}`);
+                    break;
 
-            //     case '*':
-            //         result = number1 * number2;
-            //         console.log(`${number1} * ${number2} = ${result}`);
-            //         document.write(`This is Multiplication Result :  ${number1} * ${number2} = ${result}`);
-            //         break;
+                case '*':
+                    result = number1 * number2;
+                    console.log(`${number1} * ${number2} = ${result}`);
+                    document.write(`This is Multiplication Result :  ${number1} * ${number2} = ${result}`);
+                    break;
 
-            //     case '/':
-            //         result = number1 / number2;
-            //         console.log(`${number1} / ${number2} = ${result}`);
-            //         document.write(`This is Division Result :  ${number1} / ${number2} = ${result}`);
-            //         break;
+                case '/':
+                    result = number1 / number2;
+                    console.log(`${number1} / ${number2} = ${result}`);
+                    document.write(`This is Division Result :  ${number1} / ${number2} = ${result}`);
+                    break;
 
-            //     default:
-            //         console.log('Invalid operator');
-            //         break;
-            // }
+                default:
+                    console.log('Invalid operator');
+                    break;
+            }
 
 
             
